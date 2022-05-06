@@ -1,0 +1,32 @@
+[
+  { "keys": ["alt+j"], "command": "move", "args": {"by": "lines", "forward": false}},
+  { "keys": ["alt+k"], "command": "move", "args": {"by": "lines", "forward": true}},
+  { "keys": ["alt+l"], "command": "move", "args": {"by": "characters", "forward": true}},
+  { "keys": ["alt+h"], "command": "move", "args": {"by": "characters", "forward": false}},
+
+
+  { "keys": ["alt+shift+j"], "command": "move", "args": {"by": "lines", "forward": false, "extend": true}},
+  { "keys": ["alt+shift+k"], "command": "move", "args": {"by": "lines", "forward": true, "extend": true}},
+  { "keys": ["alt+shift+l"], "command": "move", "args": {"by": "characters", "forward": true, "extend": true}},
+  { "keys": ["alt+shift+h"], "command": "move", "args": {"by": "characters", "forward": false, "extend": true}},
+
+
+  // move by words
+  { "keys": ["alt+f"], "command": "move", "args": {"by": "words", "forward": true}},
+  { "keys": ["alt+d"], "command": "move", "args": {"by": "words", "forward": false}},
+
+   // move and select by words
+  { "keys": ["alt+shift+c"], "command": "move", "args": {"by": "words", "forward": true, "extend": true}},
+  { "keys": ["alt+shift+x"], "command": "move", "args": {"by": "words", "forward": false, "extend": true}},
+
+  // remap default delete line
+  { "keys": ["alt+shift+ "], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
+
+  // move by paragraph
+  { "keys": ["alt+n"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": false} },
+  { "keys": ["alt+m"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": true} },
+
+  // move and select by paragraph
+  { "keys": ["alt+shift+n"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": false, "extend": true} },
+  { "keys": ["alt+shift+m"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": true, "extend": true} }
+]
