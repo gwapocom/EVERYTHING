@@ -1,16 +1,26 @@
 
 
 set backspace=indent,eol,start
-set showtabline=0
-set guifont=Fira_Code_Medium:h10.5:cANSI:qDRAFT
-set guicursor+=n-v-c:blinkon0
+"set showtabline=0
+"set guifont=Fira_Code_Medium:h9:cANSI:qDRAFT
+"set guicursor+=n-v-c:blinkon0
+
+
+"set guicursor=i:ver1
+"set guicursor+=a:blinkon0
+"autocmd InsertEnter * setlocal nocursorline
+"autocmd VimEnter,InsertLeave * setlocal cursorline
+
+"highlight Cursor guifg=red guibg=orange
+"highlight iCursor guifg=orange guibg=yellow
+
 
 set signcolumn=yes
 
-set guioptions-=m  "menu bar
-set guioptions-=T  "toolbar
-set guioptions-=r  "scrollbar
-set guioptions-=L
+"set guioptions-=m  "menu bar
+"set guioptions-=T  "toolbar
+"set guioptions-=r  "scrollbar
+"set guioptions-=L
 
 syntax on
 set noswapfile
@@ -18,12 +28,12 @@ set ruler
 set showmatch
 set number
 set nocompatible
-set nowrap
+set wrap
 set encoding=utf-8
 set laststatus=2 
 		 
 	 
-"set autoindent
+set autoindent
 set virtualedit+=onemore
 set nocompatible              " be iMproved, required
 
@@ -81,7 +91,8 @@ Plugin 'frazrepo/vim-rainbow'
   Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'itchyny/lightline.vim'
-
+Plugin 'vim-gitgutter'
+Plugin 'Yggdroot/indentLine' 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
@@ -156,15 +167,9 @@ colorscheme ayu
 
 
 
-set guicursor=i:ver1
-set guicursor+=a:blinkon0
-autocmd InsertEnter * setlocal nocursorline
-autocmd VimEnter,InsertLeave * setlocal cursorline
-
-highlight Cursor guifg=red guibg=orange
-highlight iCursor guifg=orange guibg=yellow
 
 
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open = 1
+
