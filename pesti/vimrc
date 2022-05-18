@@ -44,6 +44,8 @@ set expandtab
 
 
 
+
+
 inoremap <C-g> <C-h>
 inoremap <C-Space> <left>
 inoremap <C-l> <right>
@@ -64,18 +66,17 @@ noremap<nowait> ee dd
 noremap<nowait> e d
 
 call plug#begin('~/.vim/plugged')
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'morhetz/gruvbox'
 Plug 'mattn/emmet-vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'scrooloose/nerdtree'
-
-
 Plug 'joshdick/onedark.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sbdchd/neoformat'
 Plug 'mhartington/oceanic-next'
 Plug 'ayu-theme/ayu-vim'
 Plug 'vim-syntastic/syntastic'
+
 call plug#end()
 
 imap <expr><tab> emmet#expandAbbrIntelligent("\<tab>")
@@ -84,15 +85,15 @@ imap <expr><tab> emmet#expandAbbrIntelligent("\<tab>")
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin('~/.vim/bundle')
-Plugin '907th/vim-auto-save'
+
 Plugin 'frazrepo/vim-rainbow'
- Plugin 'MarcWeber/vim-addon-mw-utils'
-  Plugin 'tomtom/tlib_vim'
-  Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
 Plugin 'itchyny/lightline.vim'
 Plugin 'vim-gitgutter'
-Plugin 'Yggdroot/indentLine' 
+Plugin 'Yggdroot/indentLine'
+Plugin 'andreyorst/SimpleSnippets.vim'
+Plugin 'jiangmiao/auto-pairs'
+
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
@@ -104,18 +105,21 @@ call vundle#end()            " required
 
 
 
-let g:auto_save=1
+let g:SimpleSnippetsExpandOrJumpTrigger = "<Tab>"
+let g:SimpleSnippetsJumpBackwardTrigger = "<S-Tab>"
+let g:SimpleSnippetsJumpToLastTrigger = "<C-j>"
 
+let g:SimpleSnippets_snippets_plugin_path = fnamemodify(resolve(expand('<sfile>:p')), ':h') . '~/.vim/bundle/SimpleSnippets-snippets/snippets/'
+
+ map <C-s> :SimpleSnippetsEdit<CR>
 
 
 autocmd FileType css setl @iskeyword+=-
-
 autocmd FileType scss setl @iskeyword+=@-@
 
 let g:user_emmet_install_global =0 
 autocmd FileType html,css EmmetInstall
 
-imap <tab>  <Plug>snipMateTrigger
 
 filetype plugin indent on
 set tabstop=4
@@ -131,7 +135,7 @@ nnoremap <C-t> :NERDTreeToggle<CR>
 "colorscheme onedark
 ""autocmd CursorHold * silent call CocActionAsync('highlight')
 "set termguicolors
-autocmd FileType tex let b:coc_pairs = [["$", "$"]]
+
 
 au FileType c,cpp,objc,objcpp call rainbow#load()
 let g:rainbow_active = 1

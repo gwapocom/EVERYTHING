@@ -1,0 +1,12 @@
+.forEach(function(${1:elem}) {
+${2:}
+};
+
+
+
+
+
+
+
+
+
