@@ -1,4 +1,4 @@
-
+autocmd TextChanged,TextChangedI <buffer> silent write
 
 set backspace=indent,eol,start
 "set showtabline=0
